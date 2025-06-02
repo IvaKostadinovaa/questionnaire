@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Самоевалуација </title>
+    <link rel="stylesheet" href="css/questionnaire_style.css">
+</head>
+<body>
+
+<header>Систем за Самоевалуација</header>
+
+<nav>
+    <button class="tab-btn active" data-target="mental"> Ментално Здравје</button>
+    <button class="tab-btn" data-target="physical"> Физичка Активност</button>
+    <button class="tab-btn" data-target="social"> Социјални Односи</button>
+</nav>
+
+<form id="evalForm">
+    <!-- Ментално Здравје -->
+    <section id="mental" class="tab-section" style="display: block;">
+        <h2>Ментално Здравје</h2>
+        <label for="stress">Колку често се чувствуваш под стрес? </label>
+        <select id="stress" name="stress" required>
+            <option value="">Избери</option>
+            <option value="1">Често</option>
+            <option value="2">Понекогаш</option>
+            <option value="3">Ретко</option>
+        </select>
+
+        <label for="sleep_quality">Колку добро спиеш? </label>
+        <select id="sleep_quality" name="sleep_quality" required>
+            <option value="">Избери</option>
+            <option value="1">Лошо</option>
+            <option value="2">Средно</option>
+            <option value="3">Добро</option>
+        </select>
+
+        <label for="happiness">Колку често се чувствуваш среќен/а?  </label>
+        <select id="happiness" name="happiness" required>
+            <option value="">Избери</option>
+            <option value="1">Ретко</option>
+            <option value="2">Понекогаш</option>
+            <option value="3">Често</option>
+        </select>
+        <label for="emotions">Колку добро се справуваш со лоши чувства (лутина, тага)?
+          </label>
+        <select id="emotions" name="emotions" required>
+            <option value="">Избери </option>
+            <option value="1">Многу тешко</option>
+            <option value="2">Тешко</option>
+            <option value="3">Лесно</option>
+            <option value="4">Многу лесно</option>
+        </select>
+        <button type="submit" class="submit-section-btn">Прикажи резултат</button>
+    </section>
+
+    <!-- Физичка Активност -->
+    <section id="physical" class="tab-section" style="display: none;">
+        <h2>Физичка Активност</h2>
+        <label for="exercise">Колку често вежбаш? </label>
+        <select id="exercise" name="exercise" required>
+            <option value="">Избери</option>
+            <option value="1">Ретко</option>
+            <option value="2">Понекогаш</option>
+            <option value="3">Често</option>
+
+        </select>
+
+        <label for="activities">
+            Дали учествуваш во спортски активности надвор од училиштето?</label>
+            <select id="activities" name="activities" required>
+            <option value="">Избери</option>
+            <option value="1">Никогаш </option>
+            <option value="2">Понекогаш </option>
+            <option value="3">Често </option>
+        </select>
+        <label for="screen_time">
+            Колку време дневно минуваш пред екран (вкл. мобилен, ТВ, компјутер)?
+            </label>
+        <select id="screen_time" name="screen_time" required>
+            <option value="">Избери</option>
+            <option value="1">Повеќе од 3 часа </option>
+            <option value="2"> 1–2 часа </option>
+            <option value="3">Помалку од 1 час </option>
+        </select>
+        <button type="submit" class="submit-section-btn">Прикажи резултат</button>
+
+    </section>
+
+    <!-- Социјални Односи -->
+    <section id="social" class="tab-section" style="display: none;">
+        <h2>Социјални Односи</h2>
+        <label for="friends">Колку често се дружиш со пријателите? </label>
+        <select id="friends" name="friends" required>
+            <option value="">Избери</option>
+            <option value="1">Ретко</option>
+            <option value="2">Понекогаш</option>
+            <option value="3">Често</option>
+        </select>
+
+        <label for="close_friends">Колку блиски пријатели имаш на кои можеш да им веруваш? </label>
+        <select id="close_friends" name="close_friends" required>
+            <option value="">Избери</option>
+            <option value="1">Ниту еден</option>
+            <option value="2">Неколкумина</option>
+            <option value="3">Многу</option>
+        </select>
+        <label for="family_support">Колку се чувствуваш поддржано од семејството? </label>
+        <select id="family_support" name="family_support" required>
+            <option value="">Избери</option>
+            <option value="1">Малку</option>
+            <option value="2">Средно</option>
+            <option value="3">Многу</option>
+        </select>
+        <label for="family_talk">Колку често разговарате отворено со твоите родители?</label>
+        <select id="family_talk" name="family_talk" required>
+            <option value="">Избери</option>
+            <option value="1">Малку</option>
+            <option value="2">Средно</option>
+            <option value="3">Многу</option>
+        </select>
+        <button type="submit" class="submit-section-btn">Прикажи резултат</button>
+    </section>
+</form>
+
+<div id="modalOverlay">
+    <div id="modalContent">
+        <button id="closeModal" title="Затвори">&times;</button>
+        <h3>Резултат од самопроценка</h3>
+        <div id="modalScore"></div>
+        <div class="progress-bar"><div class="progress" id="progressBar"></div></div>
+        <button id="adviceBtn">Види совет</button>
+        <div id="adviceText"></div>
+    </div>
+</div>
+<script src="js/questionnaire_script.js"></script>
+</body>
+</html>
+
