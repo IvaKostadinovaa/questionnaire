@@ -1,0 +1,234 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*background: #fdeba2; */
+    background: linear-gradient(rgba(252, 239, 180, 0.85), rgba(249, 220, 92, 0.85)),  no-repeat center center fixed;
+
+    background-size: cover;
+    color: #174374;
+    margin: 0;
+    padding: 0 20px 40px;
+}
+
+header {
+    background: #fbfbfb;
+    color: #2f4156;
+    padding: 25px 15px;
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: 700;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 12px rgba(249, 220, 92, 0.6);
+    letter-spacing: 1.2px;
+}
+
+nav {
+    margin: 30px 0;
+    text-align: center;
+}
+
+nav button {
+    background-color: #ffffff;
+    border: 2px solid #f9dc5c;
+    color: #2f4156;
+    padding: 12px 30px;
+    margin: 0 12px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(249, 220, 92, 0.3);
+    transition: all 0.3s ease;
+}
+
+nav button.active, nav button:hover {
+    background-color: #f9dc5c;
+    color: #2f4156;
+    box-shadow: 0 6px 14px rgba(249, 220, 92, 0.7);
+    transform: translateY(-3px);
+}
+
+form {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #fdf7df;
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    color: #2f4156;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2f4156;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #2f4156;
+}
+
+label::before {
+    font-size: 1.3em;
+    color: #f9dc5c;
+}
+
+select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 8px;
+    border-radius: 12px;
+    border: 1.5px solid #f9f9f9;
+    font-size: 1em;
+    background-color: #ffffff;
+    color: #2f4156;
+    box-shadow: inset 0 1px 3px rgb(251, 234, 161);
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #f9dc5c;
+    outline: none;
+    background-color: #fcefb4;
+}
+
+button[type="submit"] {
+    margin-top: 30px;
+    background: #f7db5c;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    color: #2f4156;
+    border: none;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+button[type="submit"]:hover {
+    background: #f4e077;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    color: #2f4156;
+}
+
+
+#modalOverlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(240, 240, 240, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+#modalContent {
+    background-color: #ffffff;
+    border-radius: 25px;
+    max-width: 420px;
+    width: 100%;
+    padding: 30px 35px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #2f4156;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+#modalContent h3 {
+    margin-top: 0;
+    color: #2f4156;
+    font-size: 1.4em;
+}
+
+.progress-bar {
+    height: 24px;
+    width: 100%;
+    background: #fcefb4;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 25px 0 20px;
+    box-shadow: inset 0 3px 7px rgba(0,0,0,0.1);
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #f9dc5c;
+    border-radius: 30px;
+    box-shadow: 0 0 12px rgba(249, 220, 92, 0.8);
+    transition: width 0.7s ease;
+}
+
+#modalScore {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #2f4156;
+}
+
+#adviceBtn {
+    background-color: #2f4156;
+    color: #fdfdfd;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#adviceBtn:hover {
+    background-color: #1e2e3e;
+    color: #ffffff;
+}
+
+#adviceText {
+    margin-top: 18px;
+    background-color: #fcefb4;
+    color: #7a6f3c;
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: 500;
+    display: none;
+    text-align: left;
+    line-height: 1.4em;
+}
+
+#closeModal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.8em;
+    color: #2f4156;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#closeModal:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 20px 25px;
+    }
+    nav button {
+        margin: 10px 5px;
+        padding: 10px 20px;
+    }
+}
